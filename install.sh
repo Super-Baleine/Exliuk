@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-if [ ! -z "$1" ];then
+deps(){
   apt install libcanberra-gtk-module -y;
   pip install clipboard
+}
+
+if [[ $# -ge 1 ]]; then
+  deps;
 fi
 
 mkdir -p /opt/exliuk;
